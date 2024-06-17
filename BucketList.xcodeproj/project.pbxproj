@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E14E6ED2C2016ED00EC02B2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E14E6EC2C2016ED00EC02B2 /* Result.swift */; };
+		9E2D6D932C1DAD7400015306 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2D6D922C1DAD7400015306 /* Location.swift */; };
 		9E43EF452C1B55F700F814E1 /* BucketListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43EF442C1B55F700F814E1 /* BucketListApp.swift */; };
 		9E43EF472C1B55F700F814E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43EF462C1B55F700F814E1 /* ContentView.swift */; };
 		9E43EF492C1B55F700F814E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E43EF482C1B55F700F814E1 /* Assets.xcassets */; };
@@ -14,6 +16,7 @@
 		9E43EF562C1B55F800F814E1 /* BucketListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43EF552C1B55F800F814E1 /* BucketListTests.swift */; };
 		9E43EF602C1B55F800F814E1 /* BucketListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43EF5F2C1B55F800F814E1 /* BucketListUITests.swift */; };
 		9E43EF622C1B55F800F814E1 /* BucketListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43EF612C1B55F800F814E1 /* BucketListUITestsLaunchTests.swift */; };
+		9E8E8D152C1EE0AA00A1CA85 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8E8D142C1EE0AA00A1CA85 /* EditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E14E6EC2C2016ED00EC02B2 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		9E2D6D922C1DAD7400015306 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		9E43EF412C1B55F700F814E1 /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E43EF442C1B55F700F814E1 /* BucketListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListApp.swift; sourceTree = "<group>"; };
 		9E43EF462C1B55F700F814E1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +49,7 @@
 		9E43EF5B2C1B55F800F814E1 /* BucketListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BucketListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E43EF5F2C1B55F800F814E1 /* BucketListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListUITests.swift; sourceTree = "<group>"; };
 		9E43EF612C1B55F800F814E1 /* BucketListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9E8E8D142C1EE0AA00A1CA85 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,9 @@
 			children = (
 				9E43EF442C1B55F700F814E1 /* BucketListApp.swift */,
 				9E43EF462C1B55F700F814E1 /* ContentView.swift */,
+				9E8E8D142C1EE0AA00A1CA85 /* EditView.swift */,
+				9E2D6D922C1DAD7400015306 /* Location.swift */,
+				9E14E6EC2C2016ED00EC02B2 /* Result.swift */,
 				9E43EF482C1B55F700F814E1 /* Assets.xcassets */,
 				9E43EF4A2C1B55F700F814E1 /* Preview Content */,
 			);
@@ -258,6 +267,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E43EF472C1B55F700F814E1 /* ContentView.swift in Sources */,
+				9E14E6ED2C2016ED00EC02B2 /* Result.swift in Sources */,
+				9E2D6D932C1DAD7400015306 /* Location.swift in Sources */,
+				9E8E8D152C1EE0AA00A1CA85 /* EditView.swift in Sources */,
 				9E43EF452C1B55F700F814E1 /* BucketListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,11 +437,11 @@
 				DEVELOPMENT_TEAM = 3D4DRXPTLN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Data's app needs to be unlocked to resume.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,6 +449,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chailloleaudamien.BucketList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -454,11 +470,11 @@
 				DEVELOPMENT_TEAM = 3D4DRXPTLN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Data's app needs to be unlocked to resume.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,6 +482,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chailloleaudamien.BucketList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
