@@ -17,6 +17,7 @@
 		9E43EF602C1B55F800F814E1 /* BucketListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43EF5F2C1B55F800F814E1 /* BucketListUITests.swift */; };
 		9E43EF622C1B55F800F814E1 /* BucketListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43EF612C1B55F800F814E1 /* BucketListUITestsLaunchTests.swift */; };
 		9E8E8D152C1EE0AA00A1CA85 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8E8D142C1EE0AA00A1CA85 /* EditView.swift */; };
+		9EFCB0982C21D7A0007BDD69 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFCB0972C21D7A0007BDD69 /* ContentView-ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		9E43EF5F2C1B55F800F814E1 /* BucketListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListUITests.swift; sourceTree = "<group>"; };
 		9E43EF612C1B55F800F814E1 /* BucketListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9E8E8D142C1EE0AA00A1CA85 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		9EFCB0972C21D7A0007BDD69 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				9E43EF462C1B55F700F814E1 /* ContentView.swift */,
 				9E8E8D142C1EE0AA00A1CA85 /* EditView.swift */,
 				9E2D6D922C1DAD7400015306 /* Location.swift */,
+				9EFCB0972C21D7A0007BDD69 /* ContentView-ViewModel.swift */,
 				9E14E6EC2C2016ED00EC02B2 /* Result.swift */,
 				9E43EF482C1B55F700F814E1 /* Assets.xcassets */,
 				9E43EF4A2C1B55F700F814E1 /* Preview Content */,
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E43EF472C1B55F700F814E1 /* ContentView.swift in Sources */,
+				9EFCB0982C21D7A0007BDD69 /* ContentView-ViewModel.swift in Sources */,
 				9E14E6ED2C2016ED00EC02B2 /* Result.swift in Sources */,
 				9E2D6D932C1DAD7400015306 /* Location.swift in Sources */,
 				9E8E8D152C1EE0AA00A1CA85 /* EditView.swift in Sources */,
