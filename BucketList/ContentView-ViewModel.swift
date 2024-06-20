@@ -6,14 +6,16 @@
 //
 
 import CoreLocation
-import Foundation
+import LocalAuthentication
 import MapKit
+import SwiftUI
 
 extension ContentView {
     @Observable
     class ViewModel {
         private(set) var locations: [Location]
         var selectedPlace: Location?
+        var isUnlocked: Bool = false
         
         let savePath = URL.documentsDirectory.appending(path: "SavedPath")
         
@@ -49,5 +51,37 @@ extension ContentView {
                 save()
             }
         }
+        
+        // FIXME: To put in the EditView-ViewModel ???
+//        func delete(at offsets: IndexSet) {
+//            locations.remove(atOffsets: offsets)
+//        }
+        
+        func authenticate() {
+            let context = LAContext()
+            var error: NSError?
+            
+            if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+                let reason = "Data's app needs to be unlocked to resume."
+                
+                context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
+                    if success {
+                        self.isUnlocked = true
+                    } else {
+                        context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error)
+                    }
+                }
+            } else {
+                context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error)
+            }
+        }
     }
 }
+
+//        var mapMode: InteractionMode = .standard
+//
+//        var stylesMap: [MapStyle] = [.standard, .hybrid]
+//
+//        enum InteractionMode {
+//            case standard, hybrid
+//        }
