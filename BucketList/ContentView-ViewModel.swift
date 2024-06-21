@@ -6,9 +6,8 @@
 //
 
 import CoreLocation
+import Foundation
 import LocalAuthentication
-import MapKit
-import SwiftUI
 
 extension ContentView {
     @Observable
@@ -77,11 +76,3 @@ extension ContentView {
         }
     }
 }
-
-//        var mapMode: InteractionMode = .standard
-//
-//        var stylesMap: [MapStyle] = [.standard, .hybrid]
-//
-//        enum InteractionMode {
-//            case standard, hybrid
-//        }

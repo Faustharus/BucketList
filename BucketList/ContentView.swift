@@ -14,35 +14,46 @@ struct ContentView: View {
     
     @State private var viewModel = ViewModel()
     
+    @State private var modes: mapModeStyle = .standard
+    
     var body: some View {
         if !viewModel.isUnlocked {
-            MapReader { proxy in
-                Map(initialPosition: startPosition) {
-                    ForEach(viewModel.locations) { location in
-                        Annotation(location.name, coordinate: location.coordinate) {
-                            Image(systemName: "star.circle")
-                                .resizable()
-                                .foregroundStyle(.red)
-                                .frame(width: 44, height: 44)
-                                .background(.white)
-                                .clipShape(.circle)
-                                .onLongPressGesture {
-                                    viewModel.selectedPlace = location
-                                }
+            VStack {
+                MapReader { proxy in
+                    Map(initialPosition: startPosition) {
+                        ForEach(viewModel.locations) { location in
+                            Annotation(location.name, coordinate: location.coordinate) {
+                                Image(systemName: "star.circle")
+                                    .resizable()
+                                    .foregroundStyle(.red)
+                                    .frame(width: 44, height: 44)
+                                    .background(.white)
+                                    .clipShape(.circle)
+                                    .onLongPressGesture {
+                                        viewModel.selectedPlace = location
+                                    }
+                            }
+                        }
+                    }
+                    .mapStyle(selectedMapStyle)
+                    .onTapGesture { position in
+                        if let coordinate = proxy.convert(position, from: .local) {
+                            viewModel.addLocation(point: coordinate)
+                        }
+                    }
+                    .sheet(item: $viewModel.selectedPlace) { place in
+                        EditView(location: place) {
+                            viewModel.update(location: $0)
                         }
                     }
                 }
-                .mapStyle(.standard)
-                .onTapGesture { position in
-                    if let coordinate = proxy.convert(position, from: .local) {
-                        viewModel.addLocation(point: coordinate)
+                Picker("", selection: $modes) {
+                    ForEach(mapModeStyle.allCases, id: \.self) { item in
+                        Text("\(item.rawValue.capitalized)")
                     }
                 }
-                .sheet(item: $viewModel.selectedPlace) { place in
-                    EditView(location: place) {
-                        viewModel.update(location: $0)
-                    }
-                }
+                .pickerStyle(.segmented)
+                .padding()
             }
         } else {
             Button {
@@ -61,4 +72,18 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+}
+
+// MARK: Computed Properties
+extension ContentView {
+    
+    var selectedMapStyle: MapStyle {
+        switch modes {
+        case .standard:
+            return .standard
+        case .hybrid:
+            return .hybrid
+        }
+    }
+    
 }

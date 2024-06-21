@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9E14E6ED2C2016ED00EC02B2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E14E6EC2C2016ED00EC02B2 /* Result.swift */; };
+		9E2A84642C25D75C00DC525A /* MapModeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2A84632C25D75C00DC525A /* MapModeStyle.swift */; };
 		9E2D6D932C1DAD7400015306 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2D6D922C1DAD7400015306 /* Location.swift */; };
 		9E43EF452C1B55F700F814E1 /* BucketListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43EF442C1B55F700F814E1 /* BucketListApp.swift */; };
 		9E43EF472C1B55F700F814E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E43EF462C1B55F700F814E1 /* ContentView.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		9E14E6EC2C2016ED00EC02B2 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		9E2A84632C25D75C00DC525A /* MapModeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModeStyle.swift; sourceTree = "<group>"; };
 		9E2D6D922C1DAD7400015306 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		9E43EF412C1B55F700F814E1 /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E43EF442C1B55F700F814E1 /* BucketListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListApp.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				9E43EF442C1B55F700F814E1 /* BucketListApp.swift */,
 				9E43EF462C1B55F700F814E1 /* ContentView.swift */,
+				9E2A84632C25D75C00DC525A /* MapModeStyle.swift */,
 				9E8E8D142C1EE0AA00A1CA85 /* EditView.swift */,
 				9E2D6D922C1DAD7400015306 /* Location.swift */,
 				9EFCB0972C21D7A0007BDD69 /* ContentView-ViewModel.swift */,
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E43EF472C1B55F700F814E1 /* ContentView.swift in Sources */,
+				9E2A84642C25D75C00DC525A /* MapModeStyle.swift in Sources */,
 				9EFCB0982C21D7A0007BDD69 /* ContentView-ViewModel.swift in Sources */,
 				9E14E6ED2C2016ED00EC02B2 /* Result.swift in Sources */,
 				9ECE3AD12C22FBC600645447 /* EditView-ViewModel.swift in Sources */,
