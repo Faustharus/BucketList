@@ -17,7 +17,7 @@ struct ContentView: View {
     @State private var modes: mapModeStyle = .standard
     
     var body: some View {
-        if !viewModel.isUnlocked {
+        if viewModel.isUnlocked {
             VStack {
                 MapReader { proxy in
                     Map(initialPosition: startPosition) {

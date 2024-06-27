@@ -12,30 +12,21 @@ struct EditView: View {
     
     @Environment(\.dismiss) var dismiss
     
-    var location: Location
     var onSave: (Location) -> Void
     
-    @State private var name: String = ""
-    @State private var details: String = ""
-    
-    @State private var viewModel = ViewModel()
+    @State private var viewModel: ViewModel
     
     init(location: Location, onSave: @escaping (Location) -> Void) {
-        self.location = location
         self.onSave = onSave
-        
-        _name = State(initialValue: location.name)
-        _details = State(initialValue: location.details)
-        
-        _viewModel = State(initialValue: viewModel)
+        _viewModel = State(initialValue: ViewModel(location: location))
     }
     
     var body: some View {
         NavigationStack {
             Form {
                 Section {
-                    TextField("Name", text: $name)
-                    TextField("Details", text: $details)
+                    TextField("Name", text: $viewModel.name)
+                    TextField("Details", text: $viewModel.details)
                 }
                 
                 Section("Nearby...") {
@@ -58,11 +49,7 @@ struct EditView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
-                        var newLocation = location
-                        newLocation.id = UUID()
-                        newLocation.name = name
-                        newLocation.details = details
-                        
+                        let newLocation = viewModel.createNewPlaces()
                         onSave(newLocation)
                         dismiss()
                     }
@@ -76,7 +63,7 @@ struct EditView: View {
                 }
             }
             .task {
-                await viewModel.fetchNearbyPlaces(places: location)
+                await viewModel.fetchNearbyPlaces()
             }
         }
     }

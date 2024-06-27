@@ -16,6 +16,10 @@ extension ContentView {
         var selectedPlace: Location?
         var isUnlocked: Bool = false
         
+        var isDevicePasscodeInUse: Bool = false
+        
+        let secAccessControlObject: SecAccessControl = SecAccessControlCreateWithFlags(kCFAllocatorDefault, kSecAttrAccessibleWhenUnlockedThisDeviceOnly, .devicePasscode, nil)!
+        
         let savePath = URL.documentsDirectory.appending(path: "SavedPath")
         
         init() {
@@ -60,19 +64,48 @@ extension ContentView {
             let context = LAContext()
             var error: NSError?
             
+            let reason = "Data's app needs to be unlocked to resume."
+            
+//            if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+//                let reason = "Data's app needs to be unlocked to resume."
+//                
+//                context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
+//                    if success {
+//                        self.isUnlocked = true
+//                    } else {
+//                        self.isUnlocked = false
+//                    }
+//                }
+//            } else {
+//                context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error)
+//            }
+            
             if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-                let reason = "Data's app needs to be unlocked to resume."
-                
                 context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
                     if success {
                         self.isUnlocked = true
                     } else {
-                        context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error)
+                        self.isUnlocked = false
+                        self.isDevicePasscodeInUse = true
                     }
                 }
             } else {
-                context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error)
+                // No biometrics
+                if isDevicePasscodeInUse {
+                    context.evaluateAccessControl(secAccessControlObject, operation: .createKey, localizedReason: reason) { success, authenticationError in
+                        // TODO: More Code Later
+                        if success {
+                            self.isUnlocked = true
+                        } else {
+                            // An issue has been detected
+                        }
+                    }
+                }
             }
         }
     }
 }
+
+//                context.evaluateAccessControl(SecAccessControlCreateWithFlags(.none, CFTypeRef.biometry(fallback: .devicePasscode), .devicePasscode, .allocate(capacity: 1))!, operation: LAAccessControlOperation.useItem, localizedReason: "") { success, error in
+//                    // TODO: Later
+//                }
